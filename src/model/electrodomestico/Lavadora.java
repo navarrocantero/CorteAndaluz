@@ -1,8 +1,8 @@
 package model.electrodomestico;
 
-import static model.electrodomestico.Util.checkEmptyChar;
-import static model.electrodomestico.Util.checkEmptyString;
-import static model.electrodomestico.Util.checkPositiveDouble;
+import model.Util;
+
+import java.text.DecimalFormat;
 
 /**
  * Created by Laptop on 30/03/2017.
@@ -12,7 +12,7 @@ public class Lavadora extends Electrodomestico {
     private String bocaCarga;
     private double maxCentrifugado;
     private boolean esSecadora;
-
+    public  DecimalFormat formateador = new DecimalFormat(".##");
 
     // Constructores
 
@@ -55,11 +55,11 @@ public class Lavadora extends Electrodomestico {
     // Setters
 
     public void setBocaCarga(String bocaCarga) {
-        this.bocaCarga = checkEmptyString(bocaCarga);
+        this.bocaCarga = Util.checkEmptyString(bocaCarga);
     }
 
     public void setMaxCentrifugado(double maxCentrifugado) {
-        this.maxCentrifugado = checkPositiveDouble(maxCentrifugado);
+        this.maxCentrifugado = Util.checkPositiveDouble(maxCentrifugado);
     }
 
     public void setEsSecadora(boolean esSecadora) {
@@ -74,6 +74,7 @@ public class Lavadora extends Electrodomestico {
                 " Centrifugado = " + maxCentrifugado + " RPM\n" +
                 " Secadora  = " + esSecadora + "\n" +
                 super.toString();
+
     }
 
 
@@ -83,6 +84,7 @@ public class Lavadora extends Electrodomestico {
         double recuento = 0;
 
         for (Lavadora lav :lavaArgs){
+
             recuento =+ lav.precioVentaPublico();
 
         }

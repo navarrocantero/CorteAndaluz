@@ -1,8 +1,6 @@
 package model.electrodomestico;
 
-import static model.electrodomestico.Util.checkEmptyChar;
-import static model.electrodomestico.Util.checkEmptyString;
-import static model.electrodomestico.Util.checkPositiveDouble;
+import model.Util;
 
 
 public abstract class Electrodomestico {
@@ -73,36 +71,36 @@ public abstract class Electrodomestico {
     // seteara a 'X'
 
     public void setMarca(String marca) {
-        this.marca = checkEmptyString(marca);
+        this.marca = Util.checkEmptyString(marca);
     }
 
     public void setModelo(String modelo) {
-        this.modelo = checkEmptyString(modelo);
+        this.modelo = Util.checkEmptyString(modelo);
     }
 
     protected void setPrecioBase(double precioBase) {
-        this.precioBase = checkPositiveDouble(precioBase);
+        this.precioBase = Util.checkPositiveDouble(precioBase);
     }
 
     protected void setConsumoEnergetico(char consumoEnergetico) {
-        this.consumoEnergetico = checkEmptyChar(consumoEnergetico);
+        this.consumoEnergetico = Util.checkEmptyChar(consumoEnergetico);
     }
 
     protected void setAltura(double altura) {
-        this.altura = checkPositiveDouble(altura);
+        this.altura = Util.checkPositiveDouble(altura);
     }
 
     protected void setAnchura(double anchura) {
-        this.anchura = checkPositiveDouble(anchura);
+        this.anchura = Util.checkPositiveDouble(anchura);
     }
 
     protected void setPeso(double peso) {
-        this.peso = checkPositiveDouble(peso);
+        this.peso = Util.checkPositiveDouble(peso);
     }
 
     @Override
     public String toString() {
-        return " Electrodomestico\n" +
+        return
                 " Marca = " + marca + '\n' +
                 " Modelo = " + modelo + '\n' +
                 " ConsumoEnergetico clase = " + consumoEnergetico + "\n" +

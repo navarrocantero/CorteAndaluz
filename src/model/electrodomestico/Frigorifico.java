@@ -1,7 +1,7 @@
 package model.electrodomestico;
 import java.util.Arrays;
 
-import static model.electrodomestico.Util.checkPositiveDouble;
+import static model.Util.checkPositiveDouble;
 
 /**
  * Created by Laptop on 30/03/2017.
@@ -87,7 +87,7 @@ public class Frigorifico extends Electrodomestico {
     public Double ingresoTotalFrigorificos (Frigorifico...frigoArg){
         double recuento = 0;
         for (Frigorifico frig :frigoArg){
-            recuento =+ frig.precioVentaPublico();
+            recuento += frig.precioVentaPublico();
 
         }
     return recuento;
